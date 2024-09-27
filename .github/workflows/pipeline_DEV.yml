@@ -1,0 +1,23 @@
+name: DEV
+
+on:
+  push:
+    branches:
+      - DEV
+  pull_request:
+    branches:
+      - DEV
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+   
+    - name: Render Deploy Action
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:
+        service-id: srv-crr8alg8fa8c73elv4v0
+        api-key: rnd_bKAKFUhX0GBdwMjNkptq0YMnM8Gp
